@@ -9,7 +9,7 @@ This write-up summarizes solutions for Bandit levels 0-10 from OverTheWire. Thes
 Commands for quick reference:
 
 | Command | Description | Useful Flags |
-|---------|-------------|--------------|
+|-|-|-|
 | `ssh` | remote login to another server | -p |
 | `ls` | list files | -l, -t, -r, -h, -a |
 | `cd` | change directories ||
