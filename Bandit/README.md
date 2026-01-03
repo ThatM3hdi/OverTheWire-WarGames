@@ -1,6 +1,6 @@
 # OverTheWire Bandit Write-ups
 
-Bandit is a beginner-friendly wargame focused on Linux commands, file manipulation, networking, and basic security concepts. Each level teaches a new skill by finding the password for the next level.
+Bandit is a beginner friendly wargame focused on Linux commands, file manipulation, networking, and basic security concepts. Each level teaches a new skill by finding the password for the next level.
 
 ## Overview
 - **Levels:** 0 to 33 (34 levels total)
