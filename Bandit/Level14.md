@@ -13,7 +13,7 @@ Commands for quick reference:
 ## Solution
 
 ### Steps: 
-List files, Copy the `sshkey.private` to a file, change file mode bits using `chmod`, Use the key to SSH into the next level
+List files, Copy the `sshkey.private` to a file, change file mode bits using `chmod`, Use the key to SSH into the next level, get the password
 
 ### Commands:
 
