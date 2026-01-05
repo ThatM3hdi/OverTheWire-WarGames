@@ -25,6 +25,7 @@ nmap -v -T4 -sV localhost -p 31000-32000
 ```
 
 **2- Step two**
+
 Connect to localhost on the port you found (the `SERVICE` that you should look for is `ssl/unknown`) using `s_client`
 ```bash
 openssl s_client -quiet -connect localhost:3XXXX
@@ -66,3 +67,5 @@ The password is here!
 ```bash
 cat /etc/bandit_pass/bandit17
 ```
+
+Back to [Bandit](../README.md) | [OverTheWire-WarGames](../../README.md)
