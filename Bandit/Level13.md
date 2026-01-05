@@ -6,95 +6,96 @@ Commands for quick reference:
 | Command | Description | Useful Flags |
 |-|-|-|
 | `xxd` | make a hex dump or do the reverse | -r |
-| `bunzip` | file compressor |  |
+| `bunzip2` | file compressor |  |
 | `gunzip` | file compressor |  |
 | `tar` | archiving utility | -x, -f |
 | `mktemp` | create a temporary file or directory | -d |
 
 ## Solution
 
-**Steps:** revert the hexdump, decompress it in deffrend ways
+### Steps: 
+revert the hexdump, decompress it in different ways
 
-**Commands:**
+### Commands:
+**1- Step one**
 ```bash
 ls
 file data.txt
 ```
-data.txt is and `ASCII text` file but it's not human readable (in the [level Goal](https://overthewire.org/wargames/bandit/bandit13.html) we can see that its a hexdump)
+data.txt is `ASCII text` file but it's not human readable (it said in the [level Goal](https://overthewire.org/wargames/bandit/bandit13.html) that its a hexdump)
 
+**2- Step two**
+Make a temporary directory to access to make files && copy `data.txt` in there.
 ```bash
 mktemp -d
-cd TEMPDIRECTORY
+cd /tmp/tmp.XXXXXX #Replace with your actual temp directory name
 cp ~/data.txt .
 ```
-we're making a temporary directory so we can have access to make files and copy `data.txt` in there 
+
+**3- Step three**
+revert the hexdump using `xxd -r` and redirect the result to `data1.txt` for better understanding of the process
 
 ```bash
 xxd -r data.txt > data1.txt
 ```
-reverting the hexdump using `xdd -r` and redirecting the result to `data1.txt` so we can have better undrestading of the process
+
+**4- Step four**
+repeatedly decompression
 
 ```bash
-file data1.txt
+file data1.txt # gzip compressed
 cp data1.txt data2.gz
 gunzip data2.gz
 ```
-the file type is `gzip` so we copy it and rename it to `data2.gz` and we decompress it usning `gunzip`
 
 ```bash
-file data2
+file data2 # bzip compressed
 cp data2 data3.bz
 bunzip2 data3.bz
 ```
-the file type is `bzip` so we copy it and rename it to `data3.bz` and we decompress it usning `bunzip2`
 
 ```bash
-file data3
+file data3 # gzip compressed 
 cp data3 data4.gz
 gunzip data4.gz
 ```
-the file type is `gzip` so we copy it and rename it to `data4.gz` and we decompress it usning `gunzip`
 
 ```bash
-file data4
+file data4 # tar archive
 cp data4 data5.tar
 tar -xf data5.tar
 ```
-the file type is `tar archive` so we copy it and rename it to `data5.tar` and we unarchive it usning `tar -xf`
 
-```bash
-file data5.bin
+```bash 
+file data5.bin # tar archive
 cp data5.bin data6.tar
 tar -xf data6.tar
 ```
-the file type is `tar archive` so we copy it and rename it to `data6.tar` and we unarchive it usning `tar -xf`
 
 ```bash
-file data6.bin
+file data6.bin # bzip compressed
 cp data6.bin data7.bz
 bunzip2 data7.bz
 ```
-the file type is `bzip` so we copy it and rename it to `data7.bz` and we decompress it usning `bunzip2`
 
 ```bash
-file data7
+file data7 # tar archive
 cp data7 data8.tar
 tar -xf data8.tar
 ```
-the file type is `tar archive` so we copy it and rename it to `data8.tar` and we unarchive it usning `tar -xf`
-
+ 
 ```bash
-file data8.bin
+file data8.bin # gzip compressed
 cp data8 data9.gz
 gunzip data9.gz
 ```
-the file type is `gzip` so we copy it and rename it to `data9.gz` and we decompress it usning `gunzip`
 
+**5- Step five**
+The password is here!
 ```bash
-file data9
+file data9 # ASCII text
 cat data9
 ```
-the file type is `ASCII text` so we can read it!
 
 
 Back to [Bandit](../README.md) | [OverTheWire-WarGames](../../README.md)

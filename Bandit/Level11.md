@@ -12,9 +12,9 @@ Commands for quick reference:
 
 ## Solution
 
-**Steps:** List files, Decode it, read it.
+### Steps: List files, Decode it, read it.
 
-**Commands:**
+### Commands:
 ```bash
 ls
 base64 -d data.txt

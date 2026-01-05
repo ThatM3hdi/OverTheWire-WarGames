@@ -13,9 +13,10 @@ Commands for quick reference:
 ## Solution
 
 The transformation can be done using a lookup table.
-**Steps:** List files, Decode it, read it.
+### Steps: 
+List files, Decode it, read it.
 
-**Commands:**
+### Commands:
 ```bash
 cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
