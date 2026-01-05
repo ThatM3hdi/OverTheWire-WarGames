@@ -8,7 +8,6 @@ Commands for quick reference:
 | `openssh` | OpenSSL command line program |  |
 | `openssh s_client` | OpenSSL application commands | -connect |
 
-
 ## Helpful Reading Material
 - [OpenSSL Cookbook - Testing with OpenSSL](https://www.feistyduck.com/library/openssl-cookbook/online/testing-with-openssl/index.html)
 - `man openssl s_client`
@@ -22,6 +21,7 @@ Make a connection to `localhost` on port `30001` using `SSL/TLS` encryption, sub
 
 **1- Step one**
 
+Connect to localhost on port 30001 using `s_client`
 ```bash
 openssl s_client -connect localhost:30001
 ```
