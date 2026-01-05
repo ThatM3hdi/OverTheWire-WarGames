@@ -97,5 +97,4 @@ file data9 # ASCII text
 cat data9
 ```
 
-
 Back to [Bandit](../README.md) | [OverTheWire-WarGames](../../README.md)
