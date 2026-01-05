@@ -18,11 +18,13 @@ List files, Copy the `sshkey.private` to a file, change file mode bits using `ch
 ### Commands:
 
 **1- Step one**
+
 ```bash
 ls  
 cat sshkey.private 
 ```
 **2- Step two**
+
 copy the content of `sshkey.private` and paste it into a temporary file on your computer.
 
 ```bash
@@ -31,17 +33,20 @@ nano bandit-level14-private.key
 ```
 
 **3- Step three**
+
 change the file mode bits to 600 (ssh won't accept any private key that has more open access that)
 ```bash
 chmod 600 bandit-level14-private.key
 ```
 **4- Step four**
+
 make connection via `ssh` and you're authorizing with `private key` instead of password
 ```bash
 ssh -i bandit-level14-private.key bandit14@bandit.labs.overthewire.org -p 2220
 ```
 
 **5- Step five**
+
 The password is here!
 ```bash
 cat /etc/bandit_pass/bandit14

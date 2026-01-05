@@ -18,6 +18,7 @@ revert the hexdump, decompress it in different ways
 
 ### Commands:
 **1- Step one**
+
 ```bash
 ls
 file data.txt
@@ -25,6 +26,7 @@ file data.txt
 data.txt is `ASCII text` file but it's not human readable (it said in the [level Goal](https://overthewire.org/wargames/bandit/bandit13.html) that its a hexdump)
 
 **2- Step two**
+
 Make a temporary directory to access to make files && copy `data.txt` in there.
 ```bash
 mktemp -d
@@ -33,6 +35,7 @@ cp ~/data.txt .
 ```
 
 **3- Step three**
+
 revert the hexdump using `xxd -r` and redirect the result to `data1.txt` for better understanding of the process
 
 ```bash
@@ -40,6 +43,7 @@ xxd -r data.txt > data1.txt
 ```
 
 **4- Step four**
+
 repeatedly decompression
 
 ```bash
@@ -91,6 +95,7 @@ gunzip data9.gz
 ```
 
 **5- Step five**
+
 The password is here!
 ```bash
 file data9 # ASCII text
